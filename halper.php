@@ -23,3 +23,20 @@ function maxLoc($obj,$theard=null){
     return false;
 
 }
+
+function minMaxLoc($src){
+    if(!is_object($src)){
+        return false;
+    }
+    $minval = min($src->data());
+    $maxval = max($src->data());
+
+    $keymin = array_search($minval,$src->data());
+    $keymax = array_search($maxval,$src->data());
+    
+    $minloc=[fmod($keymin,$src->cols),intdiv($keymin,$src->cols)];
+    $maxloc=[fmod($keymax,$src->cols),intdiv($keymax,$src->cols)];
+
+    return ['minval'=>$minval,'maxval'=>$maxval,'minloc'=>$minloc,'maxloc'=>$maxloc];
+
+}

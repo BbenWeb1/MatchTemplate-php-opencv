@@ -11,7 +11,13 @@ $dir = dirname(__FILE__).DS;
 $src = imread($dir.'img'.DS.'src.png');
 $temp =imread($dir.'img'.DS.'temp.jpg');
 
-matchTemplate($src,$temp,$dst,TM_CCORR_NORMED);
+matchTemplate($src,$temp,$dst,2);
+
+/**extract(\minMaxLoc($dst));
+
+var_dump($minval,$maxval,$minloc,$maxloc);
+**/
+
 
 $Points = maxloc($dst,0.96);
 if(false!==$Points){
@@ -21,4 +27,3 @@ if(false!==$Points){
     }
     imwrite($dir.'result.jpg', $src);
     exec($dir.'result.jpg');
-}
