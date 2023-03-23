@@ -11,7 +11,7 @@ $dir = dirname(__FILE__).DS;
 $src = imread($dir.'img'.DS.'src.png');
 $temp =imread($dir.'img'.DS.'temp.jpg');
 
-matchTemplate($src,$temp,$dst,2);
+matchTemplate($src,$temp,$dst,3);
 
 /**extract(\minMaxLoc($dst));
 
