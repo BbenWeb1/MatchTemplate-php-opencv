@@ -27,3 +27,4 @@ if(false!==$Points){
     }
     imwrite($dir.'result.jpg', $src);
     exec($dir.'result.jpg');
+}
